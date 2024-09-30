@@ -1,11 +1,8 @@
+api_version: '2'
 steps:
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk:slim'
     entrypoint: 'bash'
-    args: ['-c', 'gcloud config set app/cloud_build_timout $TIMEOUT']
-  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk:slim'
-    entrypoint: 'bash'
-    args: ['-c', 'gcloud app deploy']
-
+    args: ['-c', 'gcloud config set app/cloud_build_timout $TIMEOUT && gcloud app deploy']
 options:
   logging: CLOUD_LOGGING_ONLY
 timeout: 1600s
