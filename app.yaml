@@ -1,0 +1,2 @@
+runtime: python310
+logging: CLOUD_LOGGING_ONLY
