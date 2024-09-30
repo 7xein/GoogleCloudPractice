@@ -1,9 +1,15 @@
 steps:
-  # Step 1: Build the Docker image
-  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk:slim'
     entrypoint: 'bash'
-    args: ['-c', 'gcloud config set app/cloud_build_timout 1600 && gcloud app deploy']
+    args: ['-c', 'gcloud config set app/cloud_build_timout $TIMEOUT']
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk:slim'
+    entrypoint: 'bash'
+    args: ['-c', 'gcloud app deploy']
 
 options:
   logging: CLOUD_LOGGING_ONLY
 timeout: 1600s
+env:
+  - name: TIMEOUT
+    value: '1600'
+
