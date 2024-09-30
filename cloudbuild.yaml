@@ -1,6 +1,6 @@
 steps:
   # Step 1: Build the Docker image
-  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk:slim'
     entrypoint: 'bash'
     args: ['-c', 'gcloud config set app/cloud_build_timout 1600 && gcloud app deploy']
 
