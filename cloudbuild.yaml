@@ -1,7 +1,7 @@
- steps:
-   name: 'gcr.io/google.com/cloudsdktool/cloud-sdk:slim' 
-   entrypoint: 'bash' 
-   args: ['-c', 'gcloud config set app/cloud_build_timout 1600 && gcloud app deploy'] 
+steps:
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk:slim' 
+  entrypoint: 'bash' 
+  args: ['-c', 'gcloud config set app/cloud_build_timout 1600 && gcloud app deploy'] 
  
  options: 
    logging: CLOUD_LOGGING_ONLY 
